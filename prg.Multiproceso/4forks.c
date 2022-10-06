@@ -25,8 +25,9 @@ void trabajoHijo (int numDesde, int numHasta) {
   
 int main() {
 
-    int numTotales = 200000; 	
-    int num = 100000;
+    int numTotales = 200000;
+    int numInicial = 100000;	
+    int num = numInicial;
 
     for(int i=0;i<4;i++) {
     
@@ -34,12 +35,12 @@ int main() {
         
        		printf("HIJO pid %d de PADRE pid %d\n",getpid(),getppid());
         	      	
-               	trabajoHijo(num, num+50);
+               	trabajoHijo(num, num+((numTotales-numInicial)/4));
         	
         	exit(0);
         }
         
-        num = num+50;
+        num = num+((numTotales-numInicial)/4);
     }
     
     for(int i=0;i<4;i++) {
